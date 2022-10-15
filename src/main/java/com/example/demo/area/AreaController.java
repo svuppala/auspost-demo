@@ -1,8 +1,8 @@
 package com.example.demo.area;
 
-import com.example.demo.exception.PostCodeNotFoundException;
-import com.example.demo.exception.ResourceAlreadyExistsException;
-import com.example.demo.exception.SuburbNotFoundException;
+import com.example.demo.exceptions.PostCodeNotFoundException;
+import com.example.demo.exceptions.ResourceAlreadyExistsException;
+import com.example.demo.exceptions.SuburbNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

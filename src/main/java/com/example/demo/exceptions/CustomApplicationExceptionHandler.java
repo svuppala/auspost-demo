@@ -1,8 +1,5 @@
-package com.example.demo.validation;
+package com.example.demo.exceptions;
 
-import com.example.demo.exception.PostCodeNotFoundException;
-import com.example.demo.exception.ResourceAlreadyExistsException;
-import com.example.demo.exception.SuburbNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
