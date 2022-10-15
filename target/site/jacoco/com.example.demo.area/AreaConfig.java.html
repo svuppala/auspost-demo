@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AreaConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo1</a> &gt; <a href="index.source.html" class="el_package">com.example.demo.area</a> &gt; <span class="el_source">AreaConfig.java</span></div><h1>AreaConfig.java</h1><pre class="source lang-java linenums">package com.example.demo.area;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
+
+@Configuration
+<span class="fc" id="L10">public class AreaConfig {</span>
+
+    @Bean
+    CommandLineRunner commandLineRunner(AreaRepository areaRepository) {
+<span class="fc" id="L14">        return args -&gt; {</span>
+<span class="fc" id="L15">            Area area1 = new Area(</span>
+<span class="fc" id="L16">                    3168,</span>
+                    &quot;Clayton&quot;
+            );
+
+<span class="fc" id="L20">            Area area2 = new Area(</span>
+<span class="fc" id="L21">                    3168,</span>
+                    &quot;Nottinghill&quot;
+                        );
+
+<span class="fc" id="L25">            Area area3 = new Area(</span>
+<span class="fc" id="L26">                    3170,</span>
+                    &quot;Mulgrave&quot;
+                        );
+
+<span class="fc" id="L30">            Area area4 = new Area(</span>
+<span class="fc" id="L31">                        3000,</span>
+                        &quot;Melbourne&quot;
+                        );
+
+<span class="fc" id="L35">            Area area5 = new Area(</span>
+<span class="fc" id="L36">                        2150,</span>
+                        &quot;Paramatta&quot;
+                        );
+
+<span class="fc" id="L40">            Area area6 = new Area(</span>
+<span class="fc" id="L41">                        2124,</span>
+                        &quot;Paramatta&quot;
+                        );
+
+<span class="fc" id="L45">            areaRepository.saveAll(List.of(area1, area2, area3, area4, area5, area6));</span>
+<span class="fc" id="L46">        };</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
