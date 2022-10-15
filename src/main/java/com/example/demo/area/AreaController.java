@@ -20,6 +20,11 @@ public class AreaController {
     @GetMapping(path = "/suburb/{postcode}")
     public List<AreaSuburbResponse> getSuburbs(@PathVariable("postcode") int postcode){
         return areaResponseMapper.toAreaSuburbResponses(areaService.getAreasByPostCode(postcode));
+    }
 
+    @GetMapping(path = "/postcode/{suburb}")
+    public List<AreaPostcodeResponse> getPostcodes(@PathVariable("suburb") String suburb){
+        List<Area> areas = areaService.getAreasBySuburb(suburb);
+        return areaResponseMapper.toAreaPostcodeResponses(areas);
     }
 }

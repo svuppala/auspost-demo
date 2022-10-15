@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-15T11:28:22+1100",
+    date = "2022-10-15T12:02:38+1100",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 19 (Oracle Corporation)"
 )
 @Component
@@ -38,5 +38,32 @@ public class AreaResponseMapperImpl implements AreaResponseMapper {
         areaSuburbResponse.setSuburb( area.getSuburb() );
 
         return areaSuburbResponse;
+    }
+
+    @Override
+    public List<AreaPostcodeResponse> toAreaPostcodeResponses(List<Area> areas) {
+        if ( areas == null ) {
+            return null;
+        }
+
+        List<AreaPostcodeResponse> list = new ArrayList<AreaPostcodeResponse>( areas.size() );
+        for ( Area area : areas ) {
+            list.add( toAreaPostcodeResponse( area ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public AreaPostcodeResponse toAreaPostcodeResponse(Area area) {
+        if ( area == null ) {
+            return null;
+        }
+
+        AreaPostcodeResponse areaPostcodeResponse = new AreaPostcodeResponse();
+
+        areaPostcodeResponse.setPostcode( area.getPostcode() );
+
+        return areaPostcodeResponse;
     }
 }

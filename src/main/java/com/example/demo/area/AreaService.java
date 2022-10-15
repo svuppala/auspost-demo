@@ -18,4 +18,8 @@ public class AreaService {
     public List<Area> getAreasByPostCode(int postcode) {
         return areaRepository.findAreaByPostcode(postcode);
     }
+
+    public List<Area> getAreasBySuburb(String suburb) {
+        return areaRepository.findAreaBySuburb(suburb);
+    }
 }

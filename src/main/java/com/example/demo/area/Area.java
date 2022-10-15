@@ -1,5 +1,7 @@
 package com.example.demo.area;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -14,11 +16,11 @@ public class Area {
     @Id
     private String suburb;
 
-    public int getPostCode() {
+    public int getPostcode() {
         return postcode;
     }
 
-    public void setPostCode(int postcode) {
+    public void setPostcode(int postcode) {
         this.postcode = postcode;
     }
 

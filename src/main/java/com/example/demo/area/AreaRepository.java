@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface AreaRepository extends JpaRepository<Area, AreaId> {
     List<Area> findAreaByPostcode(int postcode);
+    List<Area> findAreaBySuburb(String suburb);
 }

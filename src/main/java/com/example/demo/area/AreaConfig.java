@@ -36,7 +36,17 @@ public class AreaConfig {
                         "Melbourne"
                         );
 
-            areaRepository.saveAll(List.of(area1, area2, area3, area4));
+            Area area5 = new Area(
+                        2150,
+                        "Paramatta"
+                        );
+
+            Area area6 = new Area(
+                        2124,
+                        "Paramatta"
+                        );
+
+            areaRepository.saveAll(List.of(area1, area2, area3, area4, area5, area6));
         };
     }
 }
