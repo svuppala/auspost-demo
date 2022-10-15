@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-<span class="fc" id="L16">@RequiredArgsConstructor</span>
+<span class="fc" id="L15">@RequiredArgsConstructor</span>
 @RequestMapping(path = &quot;api/v1/area&quot;)
 public class AreaController {
 
@@ -23,17 +22,17 @@ public class AreaController {
 
     @GetMapping(path = &quot;/suburb/{postcode}&quot;)
     public ResponseEntity&lt;List&lt;AreaSuburbResponse&gt;&gt; getSuburbs(@PathVariable(&quot;postcode&quot;) Integer postcode) throws PostCodeNotFoundException {
-<span class="fc" id="L26">        return ResponseEntity.ok(areaResponseMapper.toAreaSuburbResponses(areaService.getAreasByPostCode(postcode)));</span>
+<span class="fc" id="L25">        return ResponseEntity.ok(areaResponseMapper.toAreaSuburbResponses(areaService.getAreasByPostCode(postcode)));</span>
     }
 
     @GetMapping(path = &quot;/postcode/{suburb}&quot;)
     public ResponseEntity&lt;List&lt;AreaPostcodeResponse&gt;&gt; getPostcodes(@PathVariable(&quot;suburb&quot;) String suburb) throws SuburbNotFoundException {
-<span class="fc" id="L31">        return ResponseEntity.ok(areaResponseMapper.toAreaPostcodeResponses(areaService.getAreasBySuburb(suburb)));</span>
+<span class="fc" id="L30">        return ResponseEntity.ok(areaResponseMapper.toAreaPostcodeResponses(areaService.getAreasBySuburb(suburb)));</span>
     }
 
     @PostMapping
     public ResponseEntity&lt;Area&gt; registerNewArea(@RequestBody @Valid CreateAreaRequest createAreaRequest) throws ResourceAlreadyExistsException {
-<span class="nc" id="L36">        return new ResponseEntity&lt;&gt;(areaService.addNewArea(areaResponseMapper.toArea(createAreaRequest)), HttpStatus.CREATED);</span>
+<span class="nc" id="L35">        return new ResponseEntity&lt;&gt;(areaService.addNewArea(areaResponseMapper.toArea(createAreaRequest)), HttpStatus.CREATED);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

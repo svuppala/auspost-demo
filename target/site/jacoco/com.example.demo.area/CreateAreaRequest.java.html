@@ -15,28 +15,28 @@ public class CreateAreaRequest {
     @NotBlank(message = &quot;Suburb &quot;+ MISSING_IN_THE_BODY_MESSAGE)
     private String suburb;
 
-<span class="fc" id="L18">    public CreateAreaRequest(Integer postcode, String suburb) {</span>
-<span class="fc" id="L19">        this.postcode = postcode;</span>
-<span class="fc" id="L20">        this.suburb = suburb;</span>
-<span class="fc" id="L21">    }</span>
+    public CreateAreaRequest(Integer postcode, String suburb) {
+        this.postcode = postcode;
+        this.suburb = suburb;
+    }
 
-<span class="nc" id="L23">    public CreateAreaRequest() {</span>
-<span class="nc" id="L24">    }</span>
+    public CreateAreaRequest() {
+    }
 
     public Integer getPostcode() {
-<span class="fc" id="L27">        return postcode;</span>
+        return postcode;
     }
 
     public void setPostcode(Integer postcode) {
-<span class="nc" id="L31">        this.postcode = postcode;</span>
-<span class="nc" id="L32">    }</span>
+        this.postcode = postcode;
+    }
 
     public String getSuburb() {
-<span class="fc" id="L35">        return suburb;</span>
+        return suburb;
     }
 
     public void setSuburb(String suburb) {
-<span class="nc" id="L39">        this.suburb = suburb;</span>
-<span class="nc" id="L40">    }</span>
+        this.suburb = suburb;
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -6,6 +6,7 @@ import org.mapstruct.factory.Mappers;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -35,6 +36,16 @@ class AreaResponseMapperTest {
     }
 
     @Test
+    void toAreaSuburbResponses_withNullValues() {
+
+        //when
+        List<AreaSuburbResponse> actualAreaSuburbResponses = areaResponseMapper.toAreaSuburbResponses(null);
+
+        //then
+        assertNull(actualAreaSuburbResponses);
+    }
+
+    @Test
     void toAreaSuburbResponse_withValidValues() {
         //given
         AreaSuburbResponse expectedAreaSuburbResponse = getAreaSuburbResponse();
@@ -44,6 +55,16 @@ class AreaResponseMapperTest {
 
         //then
         assertThat(expectedAreaSuburbResponse.getSuburb(), is(actualAreaSuburbResponse.getSuburb()));
+    }
+
+    @Test
+    void toAreaSuburbResponse_withNullValues() {
+
+        //when
+        AreaSuburbResponse actualAreaSuburbResponse = areaResponseMapper.toAreaSuburbResponse(null);
+
+        //then
+        assertNull(actualAreaSuburbResponse);
     }
 
     @Test
@@ -60,6 +81,16 @@ class AreaResponseMapperTest {
     }
 
     @Test
+    void toAreaPostcodeResponses_withNullValues()  {
+
+        //when
+        List<AreaPostcodeResponse> actualAreaPostcodeResponses = areaResponseMapper.toAreaPostcodeResponses(null);
+
+        //then
+        assertNull(actualAreaPostcodeResponses);
+    }
+
+    @Test
     void toAreaPostcodeResponse_withValidValues() {
         //given
         AreaPostcodeResponse expectedAreaPostcodeResponse = getAreaPostcodeResponse();
@@ -69,6 +100,15 @@ class AreaResponseMapperTest {
 
         //then
         assertThat(expectedAreaPostcodeResponse.getPostcode(), is(actualAreaPostcodeResponse.getPostcode()));
+    }
+
+    @Test
+    void toAreaPostcodeResponse_withNullValues()  {
+        //when
+        AreaPostcodeResponse actualAreaPostcodeResponse = areaResponseMapper.toAreaPostcodeResponse(null);
+
+        //then
+        assertNull(actualAreaPostcodeResponse);
     }
 
     @Test
@@ -84,6 +124,14 @@ class AreaResponseMapperTest {
         assertThat(expectedArea.getPostcode(), is(actualArea.getPostcode()));
     }
 
+    @Test
+    void toArea_withNullValues()  {
+        //when
+        Area actualArea = areaResponseMapper.toArea(null);
+
+        //then
+        assertNull(actualArea);
+    }
 
     private Area getArea() {
         return Area.builder()
