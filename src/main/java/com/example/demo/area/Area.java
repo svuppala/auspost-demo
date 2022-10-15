@@ -1,10 +1,13 @@
 package com.example.demo.area;
 
+import lombok.Builder;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 
 @Entity
+@Builder
 @IdClass(AreaId.class)
 public class Area {
 
