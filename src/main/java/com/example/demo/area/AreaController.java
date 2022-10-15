@@ -1,12 +1,16 @@
 package com.example.demo.area;
 
+import com.example.demo.exception.PostCodeNotFoundException;
+import com.example.demo.exception.ResourceAlreadyExistsException;
+import com.example.demo.exception.SuburbNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,13 +22,17 @@ public class AreaController {
     private final AreaResponseMapper areaResponseMapper;
 
     @GetMapping(path = "/suburb/{postcode}")
-    public List<AreaSuburbResponse> getSuburbs(@PathVariable("postcode") int postcode){
-        return areaResponseMapper.toAreaSuburbResponses(areaService.getAreasByPostCode(postcode));
+    public ResponseEntity<List<AreaSuburbResponse>> getSuburbs(@PathVariable("postcode") Integer postcode) throws PostCodeNotFoundException {
+        return ResponseEntity.ok(areaResponseMapper.toAreaSuburbResponses(areaService.getAreasByPostCode(postcode)));
     }
 
     @GetMapping(path = "/postcode/{suburb}")
-    public List<AreaPostcodeResponse> getPostcodes(@PathVariable("suburb") String suburb){
-        List<Area> areas = areaService.getAreasBySuburb(suburb);
-        return areaResponseMapper.toAreaPostcodeResponses(areas);
+    public ResponseEntity<List<AreaPostcodeResponse>> getPostcodes(@PathVariable("suburb") String suburb) throws SuburbNotFoundException {
+        return ResponseEntity.ok(areaResponseMapper.toAreaPostcodeResponses(areaService.getAreasBySuburb(suburb)));
+    }
+
+    @PostMapping
+    public ResponseEntity<Area> registerNewArea(@RequestBody @Valid CreateAreaRequest createAreaRequest) throws ResourceAlreadyExistsException {
+        return new ResponseEntity<>(areaService.addNewArea(areaResponseMapper.toArea(createAreaRequest)), HttpStatus.CREATED);
     }
 }

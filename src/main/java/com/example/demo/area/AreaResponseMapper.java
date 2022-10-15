@@ -15,4 +15,6 @@ public interface AreaResponseMapper {
     List<AreaPostcodeResponse> toAreaPostcodeResponses(List<Area> areas);
 
     AreaPostcodeResponse toAreaPostcodeResponse(Area area);
+
+    Area toArea(CreateAreaRequest createAreaRequest);
 }

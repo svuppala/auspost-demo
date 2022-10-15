@@ -4,20 +4,20 @@ import lombok.Builder;
 
 @Builder
 public class AreaPostcodeResponse {
-    private int postcode;
+    private Integer postcode;
 
     public AreaPostcodeResponse() {
     }
 
-    public int getPostcode() {
+    public Integer getPostcode() {
         return postcode;
     }
 
-    public void setPostcode(int postcode) {
+    public void setPostcode(Integer postcode) {
         this.postcode = postcode;
     }
 
-    public AreaPostcodeResponse(int postcode) {
+    public AreaPostcodeResponse(Integer postcode) {
         this.postcode = postcode;
     }
 }
