@@ -2,3 +2,4 @@ com/example/demo/area/AreaServiceTest.class
 com/example/demo/Demo1ApplicationTests.class
 com/example/demo/area/AreaResponseMapperTest.class
 com/example/demo/area/AreaRepositoryTest.class
+com/example/demo/area/AreaControllerIntegrationTest.class

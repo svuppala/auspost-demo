@@ -23,12 +23,12 @@ public class AreaController {
 
     @GetMapping(path = &quot;/suburb/{postcode}&quot;)
     public ResponseEntity&lt;List&lt;AreaSuburbResponse&gt;&gt; getSuburbs(@PathVariable(&quot;postcode&quot;) Integer postcode) throws PostCodeNotFoundException {
-<span class="nc" id="L26">        return ResponseEntity.ok(areaResponseMapper.toAreaSuburbResponses(areaService.getAreasByPostCode(postcode)));</span>
+<span class="fc" id="L26">        return ResponseEntity.ok(areaResponseMapper.toAreaSuburbResponses(areaService.getAreasByPostCode(postcode)));</span>
     }
 
     @GetMapping(path = &quot;/postcode/{suburb}&quot;)
     public ResponseEntity&lt;List&lt;AreaPostcodeResponse&gt;&gt; getPostcodes(@PathVariable(&quot;suburb&quot;) String suburb) throws SuburbNotFoundException {
-<span class="nc" id="L31">        return ResponseEntity.ok(areaResponseMapper.toAreaPostcodeResponses(areaService.getAreasBySuburb(suburb)));</span>
+<span class="fc" id="L31">        return ResponseEntity.ok(areaResponseMapper.toAreaPostcodeResponses(areaService.getAreasBySuburb(suburb)));</span>
     }
 
     @PostMapping
