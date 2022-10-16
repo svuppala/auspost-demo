@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+//to change CORS as necessary
+@CrossOrigin("http://localhost:8080")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "api/v1/area")
