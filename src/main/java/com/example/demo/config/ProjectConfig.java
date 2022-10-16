@@ -11,7 +11,7 @@ public class ProjectConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
-       http.httpBasic();
+       http.authorizeHttpRequests().anyRequest().authenticated().and().httpBasic();
 
        http.addFilterAfter(new CsrfLoggerFilter(), CsrfFilter.class);
     }

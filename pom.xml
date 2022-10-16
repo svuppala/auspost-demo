@@ -144,7 +144,8 @@
                         <exclude>**/CreateAreaRequest.*</exclude>
                         <exclude>**/AreaSuburbResponse*</exclude>
                         <exclude>**/config/*</exclude>
-                        <exclude>**/validation/*</exclude>
+                        <exclude>**/exceptions/*</exclude>
+                        <exclude>**/filters/*</exclude>
                     </excludes>
                 </configuration>
             </plugin>
