@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 
+//source: https://github.com/Java-Techie-jt/validation-exception-handling
 @RestControllerAdvice
 public class CustomApplicationExceptionHandler {
 
