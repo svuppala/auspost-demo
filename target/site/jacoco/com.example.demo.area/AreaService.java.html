@@ -3,7 +3,7 @@
 import com.example.demo.exceptions.PostCodeNotFoundException;
 import com.example.demo.exceptions.ResourceAlreadyExistsException;
 import com.example.demo.exceptions.SuburbNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,14 +14,10 @@ import java.util.Optional;
  * It invokes methods in the AreaRepository to retrieve and store data.
  */
 @Service
+<span class="fc" id="L17">@AllArgsConstructor</span>
 public class AreaService {
 
     private final AreaRepository areaRepository;
-
-    @Autowired
-<span class="fc" id="L22">    public AreaService(AreaRepository areaRepository) {</span>
-<span class="fc" id="L23">        this.areaRepository = areaRepository;</span>
-<span class="fc" id="L24">    }</span>
 
     /**
      * Return all the Areas that match the postcode
@@ -30,11 +26,11 @@ public class AreaService {
      * @throws PostCodeNotFoundException
      */
     public List&lt;Area&gt; getAreasByPostCode(Integer postcode) throws PostCodeNotFoundException {
-<span class="fc" id="L33">        List&lt;Area&gt; areasByPostcode = areaRepository.findAreaByPostcode(postcode);</span>
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (areasByPostcode.isEmpty()) {</span>
-<span class="fc" id="L35">            throw new PostCodeNotFoundException(String.format(&quot;The provided postcode (%d) could not be found.&quot;, postcode));</span>
+<span class="fc" id="L29">        List&lt;Area&gt; areasByPostcode = areaRepository.findAreaByPostcode(postcode);</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (areasByPostcode.isEmpty()) {</span>
+<span class="fc" id="L31">            throw new PostCodeNotFoundException(String.format(&quot;The provided postcode (%d) could not be found.&quot;, postcode));</span>
         }
-<span class="fc" id="L37">        return areasByPostcode;</span>
+<span class="fc" id="L33">        return areasByPostcode;</span>
     }
 
     /**
@@ -44,11 +40,11 @@ public class AreaService {
      * @throws SuburbNotFoundException
      */
     public List&lt;Area&gt; getAreasBySuburb(String suburb) throws SuburbNotFoundException {
-<span class="fc" id="L47">        List&lt;Area&gt; areasBySuburb = areaRepository.findAreaBySuburb(suburb);</span>
-<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (areasBySuburb.isEmpty()) {</span>
-<span class="fc" id="L49">            throw new SuburbNotFoundException(String.format(&quot;The provided suburb (%s) could not be found.&quot;, suburb));</span>
+<span class="fc" id="L43">        List&lt;Area&gt; areasBySuburb = areaRepository.findAreaBySuburb(suburb);</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (areasBySuburb.isEmpty()) {</span>
+<span class="fc" id="L45">            throw new SuburbNotFoundException(String.format(&quot;The provided suburb (%s) could not be found.&quot;, suburb));</span>
         }
-<span class="fc" id="L51">        return areasBySuburb;</span>
+<span class="fc" id="L47">        return areasBySuburb;</span>
     }
 
     /**
@@ -58,11 +54,11 @@ public class AreaService {
      * @throws ResourceAlreadyExistsException
      */
     public Area addNewArea(Area area) throws ResourceAlreadyExistsException {
-<span class="fc" id="L61">        Optional&lt;Area&gt; areaByOptional = areaRepository.findAreaByPostcodeAndSuburb(area.getPostcode(), area.getSuburb());</span>
-<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (areaByOptional.isPresent()) {</span>
-<span class="fc" id="L63">            throw new ResourceAlreadyExistsException(String.format(&quot;This Postcode (%s) and Suburb (%s) combination already exists.&quot;,area.getPostcode().toString(),area.getSuburb()));</span>
+<span class="fc" id="L57">        Optional&lt;Area&gt; areaByOptional = areaRepository.findAreaByPostcodeAndSuburb(area.getPostcode(), area.getSuburb());</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (areaByOptional.isPresent()) {</span>
+<span class="fc" id="L59">            throw new ResourceAlreadyExistsException(String.format(&quot;This Postcode (%s) and Suburb (%s) combination already exists.&quot;,area.getPostcode().toString(),area.getSuburb()));</span>
         }
-<span class="fc" id="L65">        return areaRepository.save(area);</span>
+<span class="fc" id="L61">        return areaRepository.save(area);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

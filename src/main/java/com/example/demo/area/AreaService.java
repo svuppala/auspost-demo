@@ -3,7 +3,7 @@ package com.example.demo.area;
 import com.example.demo.exceptions.PostCodeNotFoundException;
 import com.example.demo.exceptions.ResourceAlreadyExistsException;
 import com.example.demo.exceptions.SuburbNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,14 +14,10 @@ import java.util.Optional;
  * It invokes methods in the AreaRepository to retrieve and store data.
  */
 @Service
+@AllArgsConstructor
 public class AreaService {
 
     private final AreaRepository areaRepository;
-
-    @Autowired
-    public AreaService(AreaRepository areaRepository) {
-        this.areaRepository = areaRepository;
-    }
 
     /**
      * Return all the Areas that match the postcode

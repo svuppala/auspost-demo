@@ -1,17 +1,13 @@
 package com.example.demo.area;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class AreaId implements Serializable {
     private Integer postcode;
     private String suburb;
-
-    public AreaId() {
-    }
-
-    public AreaId(Integer postcode, String suburb) {
-        this.postcode = postcode;
-        this.suburb = suburb;
-    }
-
 }

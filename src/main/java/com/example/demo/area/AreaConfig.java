@@ -9,6 +9,10 @@ import java.util.List;
 @Configuration
 public class AreaConfig {
 
+    /***
+     * Used to Load Data into the Database when the application starts
+     * @param areaRepository Repository with which the Area data is going to be stored
+     */
     @Bean
     CommandLineRunner commandLineRunner(AreaRepository areaRepository) {
         return args -> {

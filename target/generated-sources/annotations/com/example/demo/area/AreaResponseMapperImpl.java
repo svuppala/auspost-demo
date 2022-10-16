@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-10-16T15:59:46+1100",
-    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 19 (Oracle Corporation)"
+    date = "2022-10-16T23:35:11+1100",
+    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 19 (Homebrew)"
 )
 @Component
 public class AreaResponseMapperImpl implements AreaResponseMapper {

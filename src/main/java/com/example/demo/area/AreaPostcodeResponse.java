@@ -1,13 +1,14 @@
 package com.example.demo.area;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class AreaPostcodeResponse {
     private Integer postcode;
-
-    public AreaPostcodeResponse() {
-    }
 
     public Integer getPostcode() {
         return postcode;
@@ -17,7 +18,4 @@ public class AreaPostcodeResponse {
         this.postcode = postcode;
     }
 
-    public AreaPostcodeResponse(Integer postcode) {
-        this.postcode = postcode;
-    }
 }

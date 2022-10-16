@@ -1,17 +1,12 @@
 package com.example.demo.area;
 
-import lombok.Builder;
+import lombok.*;
 
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class AreaSuburbResponse {
     private String suburb;
-
-    public AreaSuburbResponse(String suburb) {
-        this.suburb = suburb;
-    }
-
-    public AreaSuburbResponse() {
-    }
 
     public String getSuburb() {
         return suburb;

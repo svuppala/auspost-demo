@@ -1,13 +1,17 @@
 package com.example.demo.area;
 
-import lombok.Builder;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.Table;
 
 @Entity
 @Builder
+@Table
+@AllArgsConstructor
+@NoArgsConstructor
 @IdClass(AreaId.class)
 public class Area {
 
@@ -33,11 +37,4 @@ public class Area {
         this.suburb = suburb;
     }
 
-    public Area() {
-    }
-
-    public Area(Integer postcode, String suburb) {
-        this.postcode = postcode;
-        this.suburb = suburb;
-    }
 }

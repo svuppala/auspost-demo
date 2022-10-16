@@ -1,11 +1,15 @@
 package com.example.demo.area;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CreateAreaRequest {
 
     private static final String MISSING_IN_THE_BODY_MESSAGE ="is missing in the body";
@@ -14,14 +18,6 @@ public class CreateAreaRequest {
 
     @NotBlank(message = "Suburb "+ MISSING_IN_THE_BODY_MESSAGE)
     private String suburb;
-
-    public CreateAreaRequest(Integer postcode, String suburb) {
-        this.postcode = postcode;
-        this.suburb = suburb;
-    }
-
-    public CreateAreaRequest() {
-    }
 
     public Integer getPostcode() {
         return postcode;
