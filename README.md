@@ -15,7 +15,7 @@ Please note that installation of Docker will be required. Please follow the step
 
 > psql -U postgres
 
-> create database test;
+> create database demo;
 ```
 
 ## Spin Up Backend Service
@@ -23,6 +23,10 @@ The user can either load the project into a code editor such as IntelliJ and the
 ```bash
 java -jar ./target/demo1-0.0.1-SNAPSHOT.jar
 ```
+
+## Basic Authentication Credentials needed for making GET Request
+username: demoUserName <br/>
+password: demoUserPassword
 
 ## Jacoco Test Reports
 The Jacoco Coverage Test Report could be found at target/site/jacaco.html
