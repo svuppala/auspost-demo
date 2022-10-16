@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 
-//source: https://github.com/Java-Techie-jt/validation-exception-handling
+// followed similar pattern from source: https://github.com/Java-Techie-jt/validation-exception-handling
 @RestControllerAdvice
 public class CustomApplicationExceptionHandler {
 
-
+    /**
+     * Set error message for the ExceptionHandler for @Valid annotations
+     * @param ex exception with the error message
+     * @return Map containing the errorMessage based on @Valid conditions
+     */
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Map<String, String> handleInvalidArgument(MethodArgumentNotValidException ex) {
@@ -24,6 +28,11 @@ public class CustomApplicationExceptionHandler {
         return errorMap;
     }
 
+    /**
+     * Set error message for the ExceptionHandler for SuburbNotFoundException
+     * @param ex exception with the error message
+     * @return Map containing the errorMessage for when suburb is not found
+     */
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(SuburbNotFoundException.class)
     public Map<String, String> handleSuburbNotFoundException(SuburbNotFoundException ex) {
@@ -32,6 +41,11 @@ public class CustomApplicationExceptionHandler {
         return errorMap;
     }
 
+    /**
+     * Set error message for the ExceptionHandler for PostCodeNotFoundException
+     * @param ex exception with the error message
+     * @return Map containing the errorMessage for when the postcode is not found
+     */
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(PostCodeNotFoundException.class)
     public Map<String, String> handlePostcodeNotFoundException(PostCodeNotFoundException ex) {
@@ -40,6 +54,11 @@ public class CustomApplicationExceptionHandler {
         return errorMap;
     }
 
+    /**
+     * Set error message for the ExceptionHandler for ResourceAlreadyExistsException
+     * @param ex exception with the error message
+     * @return Map containing the errorMessage for when the resource already exists
+     */
     @ResponseStatus(HttpStatus.CONFLICT)
     @ExceptionHandler(ResourceAlreadyExistsException.class)
     public Map<String, String> handleResourceAlreadyExistsException(ResourceAlreadyExistsException ex) {
