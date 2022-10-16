@@ -23,3 +23,6 @@ The user can either load the project into a code editor such as IntelliJ and the
 ```bash
 java -jar ./target/demo1-0.0.1-SNAPSHOT.jar
 ```
+
+## Jacoco Test Reports
+The Jacoco Coverage Test Report could be found at target/site/jacaco.html
